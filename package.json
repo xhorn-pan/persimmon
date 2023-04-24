@@ -1,0 +1,13 @@
+{
+    "name": "persimmon",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "npm run build &&  cargo shuttle run --working-directory ./backend/",
+        "build": "trunk build --release --dist backend/public",
+        "style": "npx tailwindcss -i config.css -o style.css --minify",
+        "shuttle-login": "cargo shuttle login --working-directory ./backend/",
+        "deploy": "npm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty",
+        "stop": "cargo shuttle project rm --working-directory ./backend/"
+    }
+}
