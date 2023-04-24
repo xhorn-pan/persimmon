@@ -6,8 +6,9 @@
         "dev": "npm run build &&  cargo shuttle run --working-directory ./backend/",
         "build": "trunk build --release --dist backend/public",
         "style": "npx tailwindcss -i config.css -o style.css --minify",
+        "clean-public": "rm -fr backend/public",
         "shuttle-login": "cargo shuttle login --working-directory ./backend/",
-        "deploy": "npm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty",
+        "deploy": "npm run style && npm run build && cargo shuttle deploy --working-directory ./backend/ --allow-dirty --name persimmon",
         "stop": "cargo shuttle project rm --working-directory ./backend/"
     }
 }
