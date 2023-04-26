@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use crate::components::container::Container;
 
 #[function_component]
 pub fn App() -> Html {
@@ -12,10 +13,10 @@ pub fn App() -> Html {
     };
 
     html! {
-        <div class="container mx-auto">
+        <Container>
         <h1 class="text-3xl font-bold underline"> { "Hello world!" } </h1>
             <button {onclick} class="h-12 px-6 m-2 text-lg bg-sky-400">{ "+1" }</button>
             <p>{ *counter }</p>
-        </div>
+        </Container>
     }
 }
